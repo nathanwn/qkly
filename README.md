@@ -13,13 +13,13 @@
 
 ## :book: Contents
 
-- [:book: Contents](#:book:-contents)
-- [:rocket: Features](#:rocket:-features)
-  - [`qkly fetch`](#`qkly-fetch`)
-- [:package: Installation](#:package:-installation)
-  - [:hammer: Manual installation](#:hammer:-manual-installation)
-- [:heavy_check_mark: Supported Online Judges](#:heavy_check_mark:-supported-online-judges)
-- [:memo: Roadmap](#:memo:-roadmap)
+- [:book: Contents](#book-contents)
+- [:rocket: Features](#rocket-features)
+  - [`qkly fetch`](#arrow_forward-qkly-fetch)
+- [:package: Installation](#package-installation)
+  - [:hammer: Manual installation](#hammer-manual-installation)
+- [:heavy_check_mark: Supported Online Judges](#heavy_check_mark-supported-online-judges)
+- [:memo: Roadmap](#memo-roadmap)
 
 ## :rocket: Features
 
