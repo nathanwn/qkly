@@ -23,7 +23,7 @@ type Task struct {
 	TemplateDir string
 }
 
-var DefaultTemplateDir = "templates/default"
+var DefaultTemplateDir = filepath.Join("templates", "default")
 
 func NewTask(taskData *TaskData, fsMgr *filesystem.FileSystemManager, projectDir string, templateDir string) *Task {
 	judge := GetJudge(taskData)
