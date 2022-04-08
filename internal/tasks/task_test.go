@@ -14,8 +14,8 @@ func TestTaskDir(t *testing.T) {
 	fsMgr := filesystem.NewFileSystemManager(afero.NewMemMapFs())
 
 	t.Run("Normal case", func(t *testing.T) {
-		xDir := "/project/dir/codeforces/abc123/a"
-		task := Task{judges.CodeForces{}, nil, "abc123", "a", fsMgr, "/project/dir", ""}
+		xDir := filepath.Join("project", "dir", "codeforces", "abc123", "a")
+		task := Task{judges.CodeForces{}, nil, "abc123", "a", fsMgr, filepath.Join("project", "dir"), ""}
 		dir := task.Dir()
 		if dir != xDir {
 			t.Fatalf("expected %s, got %s\n", xDir, dir)
@@ -53,7 +53,7 @@ func TestCreateTask(t *testing.T) {
 		TemplateDir: DefaultTemplateDir,
 	}
 
-	dir := "./codeforces/348/d"
+	dir := filepath.Join("codeforces", "348", "d")
 
 	t.Run("TestWriteTestFiles", func(t *testing.T) {
 		if err := task.writeTestFiles(); err != nil {
@@ -61,7 +61,10 @@ func TestCreateTask(t *testing.T) {
 		}
 
 		if exists, err := afero.DirExists(fsMgr.Fs, dir); !exists {
-			t.Fatalf("Error: Directory \"./codeforces/348/d\" was not created with err %v\n", err)
+			t.Fatalf(
+				"Error: Directory \"%s\" was not created with err %s\n",
+				dir, err.Error(),
+			)
 		}
 
 		fileInfo, err := afero.ReadDir(fsMgr.Fs, dir)
