@@ -88,9 +88,9 @@ go install ./cmd/qkly
 
 At the moment, this tool supports the following online judges:
 
-- codeforces
-- atcoder
-- hackerrank
+- [CodeForces](https://codeforces.com)
+- [AtCoder](https://atcoder.jp)
+- [HackerRank](https://www.hackerrank.com/)
 
 ## :memo: Roadmap
 
