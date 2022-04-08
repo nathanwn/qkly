@@ -81,7 +81,9 @@ Since the project is still in its very early version, no binary is released just
 - Requirement: latest version of [go](https://go.dev/doc/install) (at least `1.17`)
 
 ```sh
-go install ./cmd/qkly
+$ git clone https://github.com/nathan-wien/qkly.git
+$ cd qkly
+$ go install ./cmd/qkly
 ```
 
 ## :heavy_check_mark: Supported Online Judges
