@@ -14,7 +14,7 @@ func TestTaskDir(t *testing.T) {
 	fsMgr := filesystem.NewFileSystemManager(afero.NewMemMapFs())
 
 	t.Run("Normal case", func(t *testing.T) {
-		xDir := filepath.Join("project", "dir", "codeforces", "abc123", "a")
+		xDir := filepath.Join("project", "dir", "solutions", "codeforces", "abc123", "a")
 		task := Task{judges.CodeForces{}, nil, "abc123", "a", fsMgr, filepath.Join("project", "dir"), ""}
 		dir := task.Dir()
 		if dir != xDir {
@@ -53,7 +53,7 @@ func TestCreateTask(t *testing.T) {
 		TemplateDir: DefaultTemplateDir,
 	}
 
-	dir := filepath.Join("codeforces", "348", "d")
+	dir := filepath.Join("solutions", "codeforces", "348", "d")
 
 	t.Run("TestWriteTestFiles", func(t *testing.T) {
 		if err := task.writeTestFiles(); err != nil {
