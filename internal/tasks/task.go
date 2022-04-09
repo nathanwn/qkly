@@ -45,7 +45,7 @@ func (task Task) CreateTask() error {
 }
 
 func (task Task) Dir() string {
-	return filepath.Join(task.ProjectDir, "solutions", task.Judge.Name(), task.ContestId, task.TaskId)
+	return filepath.Join(task.ProjectDir, "solutions", task.Judge.Id(), task.ContestId, task.TaskId)
 }
 
 func (task Task) CreateAndWriteFile(filepath string, content string) error {

@@ -6,7 +6,7 @@ import (
 
 type AtCoder struct{}
 
-func (judge AtCoder) Name() string {
+func (judge AtCoder) Id() string {
 	return "atcoder"
 }
 

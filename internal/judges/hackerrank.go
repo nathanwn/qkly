@@ -6,8 +6,8 @@ import (
 
 type HackerRank struct{}
 
-func (judge HackerRank) Name() string {
-	return "codeforces"
+func (judge HackerRank) Id() string {
+	return "hackerrank"
 }
 
 func (judge HackerRank) ContestAndTaskId(url string) (string, string) {

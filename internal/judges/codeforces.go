@@ -6,7 +6,7 @@ import (
 
 type CodeForces struct{}
 
-func (judge CodeForces) Name() string {
+func (judge CodeForces) Id() string {
 	return "codeforces"
 }
 

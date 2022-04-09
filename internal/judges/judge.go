@@ -1,6 +1,6 @@
 package judges
 
 type Judge interface {
-	Name() string
+	Id() string
 	ContestAndTaskId(url string) (string, string)
 }
