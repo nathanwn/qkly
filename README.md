@@ -23,7 +23,9 @@
 
 ## :rocket: Features
 
-This tool saves you from tedious repetitive actions when solving problems, such as manually copying and pasting sample test cases, copying your template files, etc. . In addition, it helps organising all the problems that you solve into an organised workspace structure for future reference. With `qkly`, your workspace structure would look similar to the following:
+This tool saves you from tedious repetitive actions when solving problems, such as manually copying and pasting sample test cases, copying your template files, etc. . In addition, it helps organising all the problems that you solve into an organised workspace structure for future reference.
+
+With `qkly`, your workspace structure would look similar to the following:
 
 ```
 .
@@ -52,14 +54,16 @@ This tool saves you from tedious repetitive actions when solving problems, such 
 ```
 
 - `qkly.yaml` is the configuration file for a `qkly` workspace. At the moment, the only thing that you can set is the port that `qkly fetch` listens on. An empty `qkly.yaml` file in the current directory is suffice to run `qkly fetch`.
-- `solution` is the directory where all your solutions go. All tasks are organised nicely into a hierarchy of judges, contests, and problem ids.
+- `solutions` is the directory where all your solutions go. All tasks are organised nicely into a hierarchy of judges, contests, and problem ids.
 - `templates/default` is the directory where all your template files go. These files will be automatically copied to each task directory on fetching with `qkly fetch`.
 
 The current version of the tool offers the following features:
 
 ### :arrow_forward: `qkly fetch`
 
-This command initiates the `fetch` mode of `qkly`. This command could only run in the root directory of your workspace
+This command, used in combination with the browser plugin [Competitive Companion](https://github.com/jmerle/competitive-companion) (available on Firefox and Chrome), initiates a local http server to listen for POST requests from Competitive Companion to get sample test cases, create solution directories and copy all of your template files into these directories.
+
+Note that you could only run `qkly fetch` in the root directory of your workspace.
 
 The general use case is as follows:
 
