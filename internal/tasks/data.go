@@ -57,14 +57,22 @@ type TaskData struct {
 	OutputConfig OutputConfiguration `json:"output"`
 }
 
-func GetJudge(taskData *TaskData) judges.Judge {
+type UnsupportedJudge struct{}
+
+func (err UnsupportedJudge) Error() string {
+	return "Judge"
+}
+
+func GetJudge(taskData *TaskData) (judges.Judge, error) {
 	if strings.HasPrefix(taskData.Url, "https://codeforces.com/") {
-		return judges.CodeForces{}
+		return judges.CodeForces{}, nil
 	} else if strings.HasPrefix(taskData.Url, "https://atcoder.jp/") {
-		return judges.AtCoder{}
+		return judges.AtCoder{}, nil
 	} else if strings.HasPrefix(taskData.Url, "https://hackerrank.com/") {
-		return judges.HackerRank{}
+		return judges.HackerRank{}, nil
+	} else if strings.HasPrefix(taskData.Url, "https://www.cses.fi/") {
+		return judges.CSES{}, nil
 	} else {
-		return nil
+		return nil, UnsupportedJudge{}
 	}
 }

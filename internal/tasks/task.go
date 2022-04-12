@@ -25,13 +25,16 @@ type Task struct {
 
 var DefaultTemplateDir = filepath.Join("templates", "default")
 
-func NewTask(taskData *TaskData, fsMgr *filesystem.FileSystemManager, projectDir string, templateDir string) *Task {
-	judge := GetJudge(taskData)
+func NewTask(taskData *TaskData, fsMgr *filesystem.FileSystemManager, projectDir string, templateDir string) (*Task, error) {
+	judge, err := GetJudge(taskData)
+	if err != nil {
+		return nil, err
+	}
 	contestId, taskId := judge.ContestAndTaskId(taskData.Url)
 	if templateDir == "" {
 		templateDir = DefaultTemplateDir
 	}
-	return &Task{judge, taskData, contestId, taskId, fsMgr, projectDir, templateDir}
+	return &Task{judge, taskData, contestId, taskId, fsMgr, projectDir, templateDir}, nil
 }
 
 func (task Task) CreateTask() error {

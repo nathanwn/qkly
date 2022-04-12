@@ -15,7 +15,7 @@
 
 - [:book: Contents](#book-contents)
 - [:rocket: Features](#rocket-features)
-  - [`qkly fetch`](#arrow_forward-qkly-fetch)
+  - [:arrow_forward: `qkly fetch`](#arrow_forward-qkly-fetch)
 - [:package: Installation](#package-installation)
   - [:hammer: Manual installation](#hammer-manual-installation)
 - [:heavy_check_mark: Supported Online Judges](#heavy_check_mark-supported-online-judges)
@@ -90,9 +90,12 @@ $ go install ./cmd/qkly
 
 At the moment, this tool supports the following online judges:
 
-- [CodeForces](https://codeforces.com)
-- [AtCoder](https://atcoder.jp)
-- [HackerRank](https://www.hackerrank.com/)
+| Judge                                     | Judge ID     |
+| ----------------------------------------- | ------------ |
+| [AtCoder](https://atcoder.jp)             | `atcoder`    |
+| [CodeForces](https://codeforces.com)      | `codeforces` |
+| [CSES](https://www.cses.fi/problemset)    | `cses`       |
+| [HackerRank](https://www.hackerrank.com/) | `hackerrank` |
 
 ## :memo: Roadmap
 

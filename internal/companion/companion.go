@@ -14,10 +14,14 @@ func Handle(context *gin.Context) {
 		fmt.Printf("Error: %s\n", err.Error())
 		return
 	}
-	task := tasks.NewTask(&taskData, filesystem.Mgr(), ".", "")
+	task, err := tasks.NewTask(&taskData, filesystem.Mgr(), ".", "")
+	if err != nil {
+		fmt.Printf("Error: %s\n", err.Error())
+		return
+	}
 	if err := task.CreateTask(); err != nil {
 		fmt.Printf("Error: %s\n", err.Error())
-	} else {
-		fmt.Printf("Parsed task to %s\n", task.Dir())
+		return
 	}
+	fmt.Printf("Parsed task to %s\n", task.Dir())
 }
