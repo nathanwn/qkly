@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/nathan-wien/qkly/internal/companion"
 	"github.com/nathan-wien/qkly/internal/filesystem"
 	"github.com/nathan-wien/qkly/internal/judges"
 )
@@ -15,7 +16,7 @@ type Judge judges.Judge
 
 type Task struct {
 	Judge       Judge
-	Data        *TaskData
+	Data        *companion.TaskData
 	ContestId   string
 	TaskId      string
 	FsMgr       *filesystem.FileSystemManager
@@ -25,12 +26,15 @@ type Task struct {
 
 var DefaultTemplateDir = filepath.Join("templates", "default")
 
-func NewTask(taskData *TaskData, fsMgr *filesystem.FileSystemManager, projectDir string, templateDir string) (*Task, error) {
-	judge, err := GetJudge(taskData)
+func NewTask(taskData *companion.TaskData, fsMgr *filesystem.FileSystemManager, projectDir string, templateDir string) (*Task, error) {
+	judge, err := judges.GetJudge(taskData.Url)
 	if err != nil {
 		return nil, err
 	}
-	contestId, taskId := judge.ContestAndTaskId(taskData.Url)
+	contestId, taskId, err := judge.ContestAndTaskId(taskData.Url)
+	if err != nil {
+		return nil, err
+	}
 	if templateDir == "" {
 		templateDir = DefaultTemplateDir
 	}

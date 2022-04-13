@@ -3,27 +3,18 @@ package judges
 import "testing"
 
 func TestJudgeId(t *testing.T) {
-	t.Run("CodeForces", func(t *testing.T) {
-		judge := CodeForces{}
-		xId := "codeforces"
-		if judge.Id() != xId {
-			t.Fatalf("Wrong judge name for Codeforces: expected \"%s\", found %s\n", xId, judge.Id())
-		}
-	})
+	xJudgeNames := make(map[Judge]string, 4)
 
-	t.Run("AtCoder", func(t *testing.T) {
-		judge := AtCoder{}
-		xId := "atcoder"
-		if judge.Id() != xId {
-			t.Fatalf("Wrong judge name for AtCoder: expected \"%s\", found %s\n", xId, judge.Id())
-		}
-	})
+	xJudgeNames[AtCoder{}] = "atcoder"
+	xJudgeNames[CodeForces{}] = "codeforces"
+	xJudgeNames[CSES{}] = "cses"
+	xJudgeNames[HackerRank{}] = "hackerrank"
 
-	t.Run("HackerRank", func(t *testing.T) {
-		judge := HackerRank{}
-		xId := "hackerrank"
-		if judge.Id() != xId {
-			t.Fatalf("Wrong judge name for HackerRank: expected \"%s\", found %s\n", xId, judge.Id())
-		}
-	})
+	for judge, xId := range xJudgeNames {
+		t.Run(xId, func(t *testing.T) {
+			if judge.Id() != xId {
+				t.Fatalf("Wrong judge name: expected \"%s\", found %s\n", xId, judge.Id())
+			}
+		})
+	}
 }

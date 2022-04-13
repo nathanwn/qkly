@@ -7,7 +7,10 @@ func TestCodeForcesContestAndTaskIdWithProblemsetUrl(t *testing.T) {
 	xContestId, xTaskId := "348", "d"
 
 	codeforces := CodeForces{}
-	contestId, taskId := codeforces.ContestAndTaskId(url)
+	contestId, taskId, err := codeforces.ContestAndTaskId(url)
+	if err != nil {
+		t.Fatalf(err.Error())
+	}
 	if contestId != xContestId {
 		t.Fatalf("contestId is not correct: expected %s, got %s\n", xContestId, contestId)
 	}
@@ -21,7 +24,10 @@ func TestCodeForcesContestAndTaskIdWithContestUrl(t *testing.T) {
 	xContestId, xTaskId := "1657", "a"
 
 	codeforces := CodeForces{}
-	contestId, taskId := codeforces.ContestAndTaskId(url)
+	contestId, taskId, err := codeforces.ContestAndTaskId(url)
+	if err != nil {
+		t.Fatalf(err.Error())
+	}
 	if contestId != xContestId {
 		t.Fatalf("contestId is not correct: expected %s, got %s\n", xContestId, contestId)
 	}

@@ -7,7 +7,10 @@ func TestCSESContestAndTaskId(t *testing.T) {
 	xContestId, xTaskId := "", "1068"
 
 	cses := CSES{}
-	contestId, taskId := cses.ContestAndTaskId(url)
+	contestId, taskId, err := cses.ContestAndTaskId(url)
+	if err != nil {
+		t.Fatalf(err.Error())
+	}
 	if contestId != xContestId {
 		t.Fatalf("contestId is not correct: expected %s, got %s\n", xContestId, contestId)
 	}

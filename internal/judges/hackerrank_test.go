@@ -8,7 +8,10 @@ func TestHackerRankContestAndTaskId(t *testing.T) {
 	xContestId, xTaskId := "uqcs-codejam-2021", "lucky-code"
 
 	hackerrank := HackerRank{}
-	contestId, taskId := hackerrank.ContestAndTaskId(url)
+	contestId, taskId, err := hackerrank.ContestAndTaskId(url)
+	if err != nil {
+		t.Fatalf(err.Error())
+	}
 	if contestId != xContestId {
 		t.Fatalf(`contestId is not correct: expected "%s", got "%s"`, xContestId, contestId)
 	}

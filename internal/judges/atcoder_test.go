@@ -7,7 +7,10 @@ func TestAtCoderContestAndTaskId(t *testing.T) {
 	xContestId, xTaskId := "abc246", "a"
 
 	atcoder := AtCoder{}
-	contestId, taskId := atcoder.ContestAndTaskId(url)
+	contestId, taskId, err := atcoder.ContestAndTaskId(url)
+	if err != nil {
+		t.Fatalf(err.Error())
+	}
 	if contestId != xContestId {
 		t.Fatalf("contestId is not correct: expected %s, got %s\n", xContestId, contestId)
 	}

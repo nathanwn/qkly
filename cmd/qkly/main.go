@@ -5,7 +5,7 @@ import (
 
 	"github.com/alexflint/go-arg"
 	"github.com/gin-gonic/gin"
-	"github.com/nathan-wien/qkly/internal/companion"
+	"github.com/nathan-wien/qkly/internal/fetch"
 	"github.com/nathan-wien/qkly/internal/filesystem"
 	"github.com/nathan-wien/qkly/internal/workspace"
 )
@@ -34,7 +34,7 @@ func main() {
 		gin.SetMode(gin.ReleaseMode)
 		engine := gin.Default()
 		engine.SetTrustedProxies(nil)
-		engine.POST("/", companion.Handle)
+		engine.POST("/", fetch.HandleCompetitiveCompanion)
 		engine.Run(fmt.Sprintf("localhost:%s", conf.Port()))
 	}
 }
