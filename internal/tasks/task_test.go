@@ -27,7 +27,7 @@ func TestTaskDir(t *testing.T) {
 func TestCreateTask(t *testing.T) {
 	fsMgr := filesystem.NewFileSystemManager(afero.NewMemMapFs())
 
-	testContent := make(map[string]string, 4)
+	testContent := make(map[string]string)
 	testContent["1.in.txt"] = "4 5\n.....\n.###.\n.###.\n....."
 	testContent["1.out.txt"] = "1"
 	testContent["2.in.txt"] = "2 3\n...\n..."

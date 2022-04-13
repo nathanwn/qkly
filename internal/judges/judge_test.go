@@ -3,7 +3,7 @@ package judges
 import "testing"
 
 func TestJudgeId(t *testing.T) {
-	xJudgeNames := make(map[Judge]string, 4)
+	xJudgeNames := make(map[Judge]string)
 
 	xJudgeNames[AtCoder{}] = "atcoder"
 	xJudgeNames[CodeForces{}] = "codeforces"
