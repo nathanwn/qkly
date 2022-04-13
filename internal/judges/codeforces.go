@@ -1,6 +1,7 @@
 package judges
 
 import (
+	"regexp"
 	"strings"
 )
 
@@ -11,13 +12,13 @@ func (judge CodeForces) Id() string {
 }
 
 func (judge CodeForces) ContestAndTaskId(url string) (string, string, error) {
-	if strings.HasPrefix(url, "https://codeforces.com/problemset/") {
+	if matched, _ := regexp.MatchString("https://(www.)?codeforces.com/problemset/*", url); matched {
 		// example url: "https://codeforces.com/problemset/problem/348/D"
 		urlSplits := strings.Split(url, "/")
 		contestId := urlSplits[5]
 		taskId := strings.ToLower(urlSplits[6])
 		return contestId, taskId, nil
-	} else if strings.HasPrefix(url, "https://codeforces.com/contest/") {
+	} else if matched, _ := regexp.MatchString("https://(www.)?codeforces.com/contest/*", url); matched {
 		// example url: "https://codeforces.com/contest/1657/problem/A"
 		urlSplits := strings.Split(url, "/")
 		contestId := urlSplits[4]

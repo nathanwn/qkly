@@ -1,6 +1,7 @@
 package judges
 
 import (
+	"regexp"
 	"strings"
 )
 
@@ -11,7 +12,7 @@ func (judge CSES) Id() string {
 }
 
 func (judge CSES) ContestAndTaskId(url string) (string, string, error) {
-	if strings.HasPrefix(url, "https://www.cses.fi/problemset/") {
+	if matched, _ := regexp.MatchString("https://(www.)?cses.fi/*", url); matched {
 		// example url: "https://www.cses.fi/problemset/task/1068"
 		urlSplits := strings.Split(url, "/")
 		contestId := ""
