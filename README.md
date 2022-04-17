@@ -3,7 +3,7 @@
   <h1>qkly</h1>
   <h5>CLI automation tool for competitive programming, aiming to make things happen a bit more quickly (hence the name) in an organised manner.</h5>
 
-[![Golang](https://img.shields.io/badge/Go-grey.svg?style=for-the-badge&logo=go)](http://www.lua.org)
+[![Golang](https://img.shields.io/badge/Go-grey.svg?style=for-the-badge&logo=go)](https://go.dev/)
 ![Work In Progress](https://img.shields.io/badge/Work%20In%20Progress-yellow?style=for-the-badge)
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nathan-wien/qkly/Test?style=flat-square)](https://github.com/nathan-wien/qkly/actions?query=workflow%3ATest)
