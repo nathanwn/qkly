@@ -4,6 +4,7 @@
   <h5>CLI automation tool for competitive programming, aiming to make things happen a bit more quickly (hence the name) in an organised manner.</h5>
 
 [![Golang](https://img.shields.io/badge/Go-grey.svg?style=for-the-badge&logo=go)](https://go.dev/)
+
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nathan-wien/qkly/Test?style=flat-square)](https://github.com/nathan-wien/qkly/actions?query=workflow%3ATest)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.17-61CFDD.svg?style=flat-square)
 

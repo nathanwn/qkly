@@ -19,6 +19,8 @@ func GetJudge(url string) (Judge, error) {
 		return HackerRank{}, nil
 	} else if matched, _ := regexp.MatchString("https://(www.)?cses.fi/*", url); matched {
 		return CSES{}, nil
+	} else if matched, _ := regexp.MatchString("https://(www.)?spoj.com/*", url); matched {
+		return SPOJ{}, nil
 	} else {
 		return nil, UnsupportedJudge{url}
 	}
