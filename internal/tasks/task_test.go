@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/nathan-wien/qkly/internal/companion"
 	"github.com/nathan-wien/qkly/internal/filesystem"
 	"github.com/nathan-wien/qkly/internal/judges"
+	"github.com/nathan-wien/qkly/internal/schema"
 	"github.com/spf13/afero"
 )
 
@@ -35,9 +35,9 @@ func TestCreateTask(t *testing.T) {
 
 	task := Task{
 		Judge: judges.CodeForces{},
-		Data: &companion.TaskData{
+		Data: &schema.TaskData{
 			Url: `https://codeforces.com/problemset/problem/348/D`,
-			Tests: []companion.TestData{
+			Tests: []schema.TestData{
 				{
 					Input:  testContent["1.in.txt"],
 					Output: testContent["1.out.txt"],

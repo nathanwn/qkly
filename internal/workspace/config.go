@@ -12,6 +12,7 @@ type Config struct {
 	v *viper.Viper
 }
 
+// Create a new config object.
 func NewConfig(fs afero.Fs) (*Config, error) {
 	configFileDir := "."
 	configFileName := "qkly.yaml"

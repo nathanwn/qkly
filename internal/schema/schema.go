@@ -1,11 +1,11 @@
-package companion
+package schema
 
 type InputType string
 
 const (
-	InputKindStdin = "stdin"
-	InputKindFile  = "file"
-	InputKindRegex = "regex"
+	StdinInput = "stdin"
+	FileInput  = "file"
+	RegexInput = "regex"
 )
 
 type InputConfiguration struct {
@@ -17,8 +17,8 @@ type InputConfiguration struct {
 type OutputType string
 
 const (
-	OutputKindStdout OutputType = "stdout"
-	OutputKindFile              = "file"
+	StdoutOutput OutputType = "stdout"
+	FileOutput              = "file"
 )
 
 type OutputConfiguration struct {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/alexflint/go-arg"
 	"github.com/gin-gonic/gin"
-	"github.com/nathan-wien/qkly/internal/fetch"
 	"github.com/nathan-wien/qkly/internal/filesystem"
+	"github.com/nathan-wien/qkly/internal/handler"
 	"github.com/nathan-wien/qkly/internal/workspace"
 )
 
@@ -28,13 +28,13 @@ func main() {
 			fmt.Println(err.Error())
 			return
 		}
-		fmt.Println("Config file found")
-		fmt.Printf("Listening on port %s\n", conf.Port())
+		fmt.Println("Config file found!")
+		fmt.Printf("Listening on port %s.\n", conf.Port())
 
 		gin.SetMode(gin.ReleaseMode)
 		engine := gin.Default()
 		engine.SetTrustedProxies(nil)
-		engine.POST("/", fetch.HandleCompetitiveCompanion)
+		engine.POST("/", handler.HandleCompetitiveCompanion)
 		engine.Run(fmt.Sprintf("localhost:%s", conf.Port()))
 	}
 }
