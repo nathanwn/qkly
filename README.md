@@ -5,7 +5,7 @@
 
 [![Golang](https://img.shields.io/badge/Go-grey.svg?style=for-the-badge&logo=go)](https://go.dev/)
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nathan-wien/qkly/Test?style=flat-square)](https://github.com/nathan-wien/qkly/actions?query=workflow%3ATest)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nathan-wien/qkly/test.yml?branch=main&style=flat-square)](https://github.com/nathan-wien/qkly/actions?query=workflow%3ATest)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.17-61CFDD.svg?style=flat-square)
 
 </div>
